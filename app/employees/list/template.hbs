@@ -1,0 +1,24 @@
+<button type="button" class="btn btn-primary" {{action "test"}}>Add new</button>
+<br>
+<div class="container">
+  <h2>List</h2>
+  <p>All employee list</p>            
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Select</th>
+        <th>Name</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |emp|}}
+      <tr>
+        <td>A</td>
+        <td>{{#link-to 'employees.neworedit' emp.id}}{{emp.name}}{{/link-to}}</td>
+        <td>{{emp.country}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
